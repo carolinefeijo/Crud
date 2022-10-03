@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 30px;
+
+}
+
+.container-main {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 61px;
+    height: 46px;
+}
+
+.title-logo-red {
+    color: #E32727;
+    margin-left: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.title-logo-green {
+    color: #63AA4A;
+    margin-left: 3px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.container-selectores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-selectores {
+    text-decoration: none;
+    margin: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: #696868;
+    cursor: pointer;
+}
+
+.title-selectores:hover {
+    text-decoration: none;
+    margin: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #fd0b0b;
+    cursor: pointer;
+}
