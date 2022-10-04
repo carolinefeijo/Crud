@@ -7,6 +7,12 @@
     margin: 20px;
 }
 
+.header-main-title-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .title {
     font-family: Quicksand;
     font-size: 25px;

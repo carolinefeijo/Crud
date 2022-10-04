@@ -1,0 +1,35 @@
+.container-home {
+    padding-top: 30px;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.container-header-results {
+    background-color: hwb(195 83% 9%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-edit {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    font-family: Quicksand;
+    font-weight: 800;
+    font-size: 14px;
+
+}
+
+.img-button {
+    width: 25px;
+    height: 25px;
+}
