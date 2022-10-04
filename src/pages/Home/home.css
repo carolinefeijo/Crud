@@ -2,11 +2,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 .container-home {
-    display: flex;
+    padding-top: 30px;
     flex-direction: column;
-    padding: 90px;
-   
+    margin: 20px;
+}
+
+.title {
+    font-family: Quicksand;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #0579a7;
+}
+
+.container-header {
+    display: flex;
+    width: 100%;
+    margin-top: 40PX;
+    border: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #70caed;
+}
+
+.title-main {
+    font-family: Quicksand;
+    font-size: 25px;
+}
+
+.title-results {
+    font-family: Quicksand;
+    font-weight: 500;
+    font-size: 23px;
 
 }
 
+.container-header-results {
+    background-color: hwb(195 83% 9%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-edit {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    font-family: Quicksand;
+    font-weight: 800;
+    font-size: 14px;
+
+}
+
+.img-button {
+    width: 25px;
+    height: 25px;
+}
