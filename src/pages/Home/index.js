@@ -5,35 +5,26 @@ import ButtonCreate from '../../components/ButtonCreate';
 import ResultsComponent from '../../components/ResultsComponent';
 import './home.css';
 
-import { FetchgetListUser, FetchNewUser } from '../../services/users';
+import { FetchgetListUser } from '../../services/users';
 
 
 const Home = () => {
-
   const [ListUser, setListUser] = useState([])
-  // const [NewUser, setNewUser] = useState()
 
-  const GetList = async () => {
+  const GetList = async () => { // lista os usuarios
     const data = await FetchgetListUser();
     setListUser(data)
   }
 
-  // const createNewUser = async () => {
-  //   const data = await FetchNewUser();
-  //   setNewUser(data)
-  // }
-
   useEffect(() => {
     GetList()
-
-
   }, []);
 
   return (
     <div className='container-home'>
 
       <div className='header-main-title-button'>
-        <h1 className='title'>CRUD BÁSICO - MEU PRIMEIRO CRUD BÁSICO </h1>
+        <h1 className='title'>CRUD BÁSICO - MEU PRIMEIRO CRUD BÁSICO</h1>
 
         <ButtonCreate />
 
@@ -48,11 +39,8 @@ const Home = () => {
         <h2 className='title-main'>Ações</h2>
 
       </div>
-      {ListUser.map((list) => <ResultsComponent list={list} />)}
-
-
+      {ListUser.map((list) => <ResultsComponent list={list}  />)}
     </div>
   );
 }
-
 export default Home;

@@ -1,13 +1,17 @@
-
-export const FetchgetListUser = () => {
-    return fetch('http://localhost:8000/user/list') // LISTAR USUARIOS
+// LISTAR USUARIOS
+export const FetchgetListUser = async () => { 
+    return fetch('http://localhost:8000/user/list', {
+        method: 'GET',
+    }) 
         .then(response => response.json())
         .then(data => { return data })
         .catch(error => console.log(error))
 }
 
-export const FetchNewUser = async (firstName, lastName, age, phone) => { // CRIAR USUARIO
-   return fetch('http://localhost:8000/user/create', {
+
+// CRIAR USUARIO
+export const FetchNewUser = async (firstName, lastName, age, phone) => { 
+    return fetch('http://localhost:8000/user/create', {
         method: 'POST',
         body: JSON.stringify({
             firstName,

@@ -2,11 +2,11 @@ import React from 'react';
 import './results.css';
 
 export default function ResultsComponent({ list }) {
-    return (
-        <div >
 
+    return (
+        <div>
             <div className='container-header-results'>
-                <h2 className='title-results'>ID</h2>
+                <h2 className='title-results'>{list._id}</h2>
                 <h2 className='title-results'>{list.firstName}</h2>
                 <h2 className='title-results'>{list.lastName}</h2>
                 <h2 className='title-results'>{list.age}</h2>
@@ -14,10 +14,11 @@ export default function ResultsComponent({ list }) {
 
 
                 <div className='buttons'>
-                    <button className='button-edit'>
-                        EDITAR</button>
-                    <button className='button-edit'>
-                        EXCLUIR</button>
+                    <a href="/edit" >
+                        <button className='button-edit'>EDITAR USUARIO</button>
+                    </a>
+
+                    <button className='button-edit'>EXCLUIR</button>
                 </div>
 
             </div>

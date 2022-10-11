@@ -1,40 +1,17 @@
-import React, { useState } from 'react';
-import './form.css';
-import { FetchNewUser } from '../../services/users';
+import React, { useState } from 'react'
 
-
-
-export default function Form() {
+export const EditUser = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastname] = useState("");
     const [age, setAge] = useState("");
     const [phone, setPhone] = useState("");
-
     
-    const validInput = (e) => {
-        e.preventDefault();
-        if (firstName && lastName && age && phone !== "") {
-            return createNewUser()
-        } else {
-            return alert("PREENCHA O CAMPO")
-        }
-    }
-
-    const createNewUser = async () => {
-        const data = await FetchNewUser(firstName, lastName, age, phone);
-
-        if (data.message === "usuário criado com sucesso") {
-            window.location.href = 'http://localhost:3000/';
-        } else {
-            console.log("naõ deu")
-        }
-
-    }
-
     return (
         <div className='container-form'>
-            <form onSubmit={validInput}>
+            <form >
                 <div className='div-container-input'>
+
+                    <h1>EDITAR USUARIO</h1>
                     <label className='label-text' htmlFor='name'> Nome:</label>
 
                     <input className='label-text-secundar' type="text" name='name' placeholder='Digite seu nome' onChange={(e) => setFirstName(e.target.value)} value={firstName} />
