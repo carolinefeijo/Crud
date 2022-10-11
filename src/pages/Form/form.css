@@ -1,0 +1,39 @@
+.container-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+form {
+    width: 900px;
+    margin: 0 auto;
+    text-align: left;
+
+}
+
+input,
+select,
+textarea {
+    display: block;
+    margin-top: 10px;
+}
+
+.div-container-input {
+    padding: 10px;
+
+}
+
+.label-text {
+    font-size: 30px;
+}
+
+.label-text-secundar {
+    font-size: 20px;
+}
+
+.custom-input-button {
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 8px;
+}

@@ -11,21 +11,21 @@ import { FetchgetListUser, FetchNewUser } from '../../services/users';
 const Home = () => {
 
   const [ListUser, setListUser] = useState([])
-  const [NewUser, setNewUser] = useState()
+  // const [NewUser, setNewUser] = useState()
 
   const GetList = async () => {
     const data = await FetchgetListUser();
-    console.log(data)
     setListUser(data)
   }
 
-  const createNewUser = async () => {
-    const data = await FetchNewUser();
-  }
+  // const createNewUser = async () => {
+  //   const data = await FetchNewUser();
+  //   setNewUser(data)
+  // }
 
   useEffect(() => {
     GetList()
-    createNewUser()
+
 
   }, []);
 
@@ -36,6 +36,7 @@ const Home = () => {
         <h1 className='title'>CRUD BÁSICO - MEU PRIMEIRO CRUD BÁSICO </h1>
 
         <ButtonCreate />
+
       </div>
 
       <div className='container-header'>
