@@ -1,17 +1,36 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
+import { FetchEditUser } from '../../services/users';
 
-export const EditUser = () => {
+export const EditUser = ({ userId }) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastname] = useState("");
     const [age, setAge] = useState("");
     const [phone, setPhone] = useState("");
-    
+
+
+
+    const GetEditUser = async (id) => {
+        const data = await FetchEditUser(id)
+        setFirstName(data)
+        setLastname()
+        setAge()
+        setPhone()
+    }
+
+    useEffect(() => {
+        GetEditUser()
+    }, [])
+
+
+
     return (
         <div className='container-form'>
             <form >
                 <div className='div-container-input'>
 
                     <h1>EDITAR USUARIO</h1>
+                    <p> ID: </p>
                     <label className='label-text' htmlFor='name'> Nome:</label>
 
                     <input className='label-text-secundar' type="text" name='name' placeholder='Digite seu nome' onChange={(e) => setFirstName(e.target.value)} value={firstName} />
@@ -32,6 +51,7 @@ export const EditUser = () => {
                     <label className='label-text' htmlFor='phone' > Phone:</label>
                     <input className='label-text-secundar' type="text" name='phone' placeholder='Digite seu telefone' onChange={(e) => setPhone(e.target.value)} value={phone} />
                 </div>
+
 
                 <input className='custom-input-button' type="submit" value="Enviar" />
 

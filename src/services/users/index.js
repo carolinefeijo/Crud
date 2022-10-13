@@ -1,8 +1,8 @@
 // LISTAR USUARIOS
-export const FetchgetListUser = async () => { 
+export const FetchgetListUser = async () => {
     return fetch('http://localhost:8000/user/list', {
         method: 'GET',
-    }) 
+    })
         .then(response => response.json())
         .then(data => { return data })
         .catch(error => console.log(error))
@@ -10,7 +10,7 @@ export const FetchgetListUser = async () => {
 
 
 // CRIAR USUARIO
-export const FetchNewUser = async (firstName, lastName, age, phone) => { 
+export const FetchNewUser = async (firstName, lastName, age, phone) => {
     return fetch('http://localhost:8000/user/create', {
         method: 'POST',
         body: JSON.stringify({
@@ -30,3 +30,17 @@ export const FetchNewUser = async (firstName, lastName, age, phone) => {
 
 }
 
+
+
+// EDITAR USUARIO
+export const FetchEditUser = async (id) => {
+    return fetch('http://localhost:8000/list/user', {
+        method: 'GET',
+        params: {
+            id,
+        }
+    })
+        .then(response => response.json())
+        .catch(error => console.log(error))
+
+}
