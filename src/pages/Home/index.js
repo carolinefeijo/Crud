@@ -39,7 +39,7 @@ const Home = () => {
         <h2 className='title-main'>Ações</h2>
 
       </div>
-      {ListUser.map((user) => <ResultsComponent user={user}  />)}
+      {ListUser.map((user) => <ResultsComponent user={user} key={user._id} />)}
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './buttonEdit.css'
 
-export default function ButtonEdit({ userId }) {
+export default function ButtonEdit({ id }) {
+
     return (
         <div>
-            <a href="/edit" >
-                <button className='button-edit'>EDITAR </button>
-            </a>
+            <Link to={``}>Detalhes</Link>
 
         </div>
     )

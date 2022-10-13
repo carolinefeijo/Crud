@@ -1,9 +1,9 @@
 import React from 'react';
-import ButtonEdit from '../ButtonEdit';
+import { Link } from 'react-router-dom';
 import './results.css';
 
 export default function ResultsComponent({ user }) {
-   
+
     return (
         <div>
             <div className='container-header-results'>
@@ -15,7 +15,8 @@ export default function ResultsComponent({ user }) {
 
 
                 <div className='buttons'>
-                    <ButtonEdit userId={user._id} />
+                    {/* <ButtonEdit  /> */}
+                    <Link to={`/edit/${user._id}`}>Detalhes</Link>
 
                     <button className='button-edit'>EXCLUIR</button>
                 </div>
@@ -24,3 +25,5 @@ export default function ResultsComponent({ user }) {
         </div>
     )
 }
+
+

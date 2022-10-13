@@ -34,10 +34,15 @@ export const FetchNewUser = async (firstName, lastName, age, phone) => {
 
 // EDITAR USUARIO
 export const FetchEditUser = async (id) => {
-    return fetch('http://localhost:8000/list/user', {
+    return fetch(`http://localhost:8000/user/find`, {
+        params: JSON.stringify({
+           id:'AAAKKK'
+        }),
         method: 'GET',
-        params: {
-            id,
+
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+
         }
     })
         .then(response => response.json())

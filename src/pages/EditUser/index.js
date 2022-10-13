@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { FetchEditUser } from '../../services/users';
 
-export const EditUser = ({ userId }) => {
+
+export const EditUser = () => {
+
+    const { id } = useParams();
+
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastname] = useState("");
     const [age, setAge] = useState("");
     const [phone, setPhone] = useState("");
 
-
-
     const GetEditUser = async (id) => {
         const data = await FetchEditUser(id)
-        setFirstName(data)
-        setLastname()
-        setAge()
-        setPhone()
+    console.log(data)
     }
 
     useEffect(() => {
@@ -30,7 +30,7 @@ export const EditUser = ({ userId }) => {
                 <div className='div-container-input'>
 
                     <h1>EDITAR USUARIO</h1>
-                    <p> ID: </p>
+                    <p> ID : {id}  </p>
                     <label className='label-text' htmlFor='name'> Nome:</label>
 
                     <input className='label-text-secundar' type="text" name='name' placeholder='Digite seu nome' onChange={(e) => setFirstName(e.target.value)} value={firstName} />
