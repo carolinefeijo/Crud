@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './results.css';
 
-export default function ResultsComponent({ user }) {
+export default function ResultsComponent({ user, deleteUser }) {
 
     return (
         <div>
@@ -18,7 +18,7 @@ export default function ResultsComponent({ user }) {
                     {/* <ButtonEdit  /> */}
                     <Link to={`/edit/${user._id}`}>Detalhes</Link>
 
-                    <button className='button-edit'>EXCLUIR</button>
+                    <button onClick={()=> {deleteUser(user._id)}} className='button-edit'>EXCLUIR</button>
                 </div>
 
             </div>

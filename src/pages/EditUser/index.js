@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { FetchEditUser } from '../../services/users';
+import { FetchEditUser, FetchUpdateUser } from '../../services/users';
 
 
 export const EditUser = () => {
@@ -13,9 +13,23 @@ export const EditUser = () => {
     const [age, setAge] = useState("");
     const [phone, setPhone] = useState("");
 
-    const GetEditUser = async (id) => {
+    const GetEditUser = async () => {
         const data = await FetchEditUser(id)
-    console.log(data)
+        setFirstName(data.firstName)
+        setLastname(data.lastName)
+        setAge(data.age)
+        setPhone(data.phone)
+    }
+
+    const updateUser = async () => {
+        const user = {
+            firstName,
+            lastName,
+            age,
+            phone
+        }
+        const data = await FetchUpdateUser(id, user)
+        
     }
 
     useEffect(() => {
@@ -53,7 +67,7 @@ export const EditUser = () => {
                 </div>
 
 
-                <input className='custom-input-button' type="submit" value="Enviar" />
+                <input className='custom-input-button' type="submit" value="Enviar" onClick={updateUser}/>
 
             </form>
 

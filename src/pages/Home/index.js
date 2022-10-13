@@ -5,7 +5,7 @@ import ButtonCreate from '../../components/ButtonCreate';
 import ResultsComponent from '../../components/ResultsComponent';
 import './home.css';
 
-import { FetchgetListUser } from '../../services/users';
+import { FetchDeleteUser, FetchgetListUser } from '../../services/users';
 
 
 const Home = () => {
@@ -14,6 +14,12 @@ const Home = () => {
   const GetList = async () => { // lista os usuarios
     const data = await FetchgetListUser();
     setListUser(data)
+  }
+
+  const deleteUser = async (id) => { 
+    const data = await FetchDeleteUser(id);
+    alert(data.message)
+    GetList()
   }
 
   useEffect(() => {
@@ -39,7 +45,7 @@ const Home = () => {
         <h2 className='title-main'>Ações</h2>
 
       </div>
-      {ListUser.map((user) => <ResultsComponent user={user} key={user._id} />)}
+      {ListUser.map((user) => <ResultsComponent user={user} key={user._id} deleteUser={deleteUser} />)}
     </div>
   );
 }
